@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+declare -A accounts
+accounts[dev]="542170872410"
+accounts[qa]="872739416210"
+accounts[prod]="141762408633"
+
+ada-kill
+
+mwinit
+kinit -f
+
+function run_ada () {
+    local env=$1
+    local account=${accounts[$env]}
+    local profile=RingDataManagementEventStream${env^}
+    [[ "$env" == "qa" ]] && profile=RingDataManagementEventStreamQA
+
+    ada credentials update --account $account --provider conduit --profile $profile --role IibsAdminAccess-DO-NOT-DELETE &
+    sleep 5
+    aws eks update-kubeconfig --profile ${profile} --name event-stream-api              --alias event-stream-api-$env
+    aws eks update-kubeconfig --profile ${profile} --name event-stream-kafka            --alias event-stream-kafka-$env
+    aws eks update-kubeconfig --profile ${profile} --name event-stream-flink            --alias event-stream-flink-$env
+    aws eks update-kubeconfig --profile ${profile} --name event-stream-flink-cloudwatch --alias event-stream-flink-cloudwatch-$env
+}
+
+run_ada prod
+run_ada qa
+run_ada dev
+
+declare -A profiles
+profiles[890452240102]="RingDoorbot"
+profiles[613225557329]="RingNonProduction"
+profiles[472993614144]="srs-data-dev"
+profiles[680806501360]="srs-data-qa"
+profiles[801371725436]="srs-data-prod"
+profiles[298227823424]="builder"
+
+declare -A roles
+roles[890452240102]="ring-engineering"
+roles[613225557329]="devops-admins"
+roles[472993614144]="ring-dm-devops"
+roles[680806501360]="ring-dm-devops"
+roles[801371725436]="ring-dm-devops"
+roles[298227823424]="ring-dm-devops"
+
+declare -A kubes
+kubes[890452240102]=""
+kubes[613225557329]=""
+kubes[472993614144]="dev-statusreports-us-east-1"
+kubes[680806501360]="qa-statusreports-us-east-1"
+kubes[801371725436]="prod-statusreports-us-east-1"
+kubes[298227823424]=""
+
+function run_others () {
+    local account=$1
+
+    ada credentials update --profile ${profiles[$account]} --account $account --provider conduit  --role ${roles[$account]} &
+
+    if [[ "${kubes[$account]}" != "" ]]; then
+        sleep 5
+        aws eks update-kubeconfig --profile ${profiles[$account]}  --name ${kubes[$account]} --kubeconfig ~/.kube/kubeconfig_${kubes[$account]}
+    fi
+
+    sleep 1
+}
+
+run_others 890452240102
+run_others 613225557329
+run_others 472993614144
+run_others 680806501360
+run_others 801371725436
+run_others 298227823424

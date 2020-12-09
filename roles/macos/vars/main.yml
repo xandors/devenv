@@ -1,0 +1,89 @@
+bashrc_includes:
+  - "[ -f ~/.bash_profile ] && . ~/.bash_profile"
+
+homebrew:
+  - ansible
+  - awscli
+  - bash
+  - bash-completion@2
+  - coreutils
+  - curl
+  - direnv
+  - gettext
+  - git
+  - graphviz
+  - helm
+  - hyperkit
+  - jq
+  - kubectl
+  - mas
+  - nmap
+  - pipenv
+  - pyenv
+  - telnet
+  - terraforming
+  - tfenv
+  - tree
+  - vim
+  - watch
+  - wget
+
+homebrew_cask:
+  - docker
+  - google-chrome
+  - intellij-idea
+  - iglance
+  - iterm2
+  - keybase
+  - multipass
+  - numi
+  - shift
+  - slack
+  - vagrant
+  - visual-studio-code
+  - xquartz
+
+vscode:
+  extensions:
+    - 4ops.terraform
+    - AmazonWebServices.aws-toolkit-vscode
+    - CoenraadS.bracket-pair-colorizer-2
+    - d4nyll.devops-extension-pack
+    - donjayamanne.git-extension-pack
+    - donjayamanne.python-extension-pack
+    - EditorConfig.EditorConfig
+    - formulahendry.docker-explorer
+    - Gruntfuggly.todo-tree
+    - HashiCorp.terraform
+    - marclipovsky.string-manipulation
+    - ms-azuretools.vscode-docker
+    - ms-vscode-remote.vscode-remote-extensionpack
+    - PKief.material-icon-theme
+    - quicktype.quicktype
+    - Tyriar.sort-lines
+    - vscode-icons-team.vscode-icons
+  settings: {
+    "files.autoSave": "afterDelay",
+    "editor.rulers": [80, 100, 120],
+    "editor.renderWhitespace": true,
+    "workbench.iconTheme": "vscode-icons",
+    "projectManager.any.maxDepthRecursion": 1,
+    "projectManager.any.baseFolders": [
+      "/Users/souzalex/projects"
+    ],
+    "files.associations": {
+      # "Vagrantfile": "ruby",
+      # "**/defaults/**/*.yml": "jinja-yaml",
+      # "**/group_vars/**/*": "jinja-yaml",
+      # "**/host_vars/**/*": "jinja-yaml",
+      # "**/vars/**/*.yml": "jinja-yaml",
+      # "**/tasks/**/*.yml": "ansible",
+      # "**/handlers/*.yml": "ansible",
+      # "**/meta/*.yml": "ansible",
+      # "**/roles/**/*.yml": "ansible",
+      # "**/playbooks/**/*.yml": "ansible",
+      # "**/ansible/**/hosts": "ini",
+      # "**/ansible/**/inventory": "ini",
+      # "ansible.cfg": "ini",
+    }
+  }

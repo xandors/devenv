@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cr=$1
+
+[[ "x" == "${cr}x" ]] && include="--new-review" || include="-r $cr"
+
+REMOTE_TARGET_BRANCH=master cr $include --parent master

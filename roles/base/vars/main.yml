@@ -1,0 +1,43 @@
+directories:
+  - ~/.aws
+  - ~/.ssh
+  - ~/.local/bin
+  - ~/projects
+  - ~/sync
+  - ~/.terraform.d/plugins
+
+files:
+  - ~/.bashrc
+  - ~/.bash_profile
+  - ~/.vimrc
+
+scripts:
+  bin:
+    - docker-login
+    - rebase.sh
+  root:
+    - bash_profile
+    - vimrc
+  specific:
+    - dir: .tfenv
+      file: use-gpgv
+
+git_config:
+  - key: "user.name"
+    value: "Alexandre Souza"
+  - key: "user.email"
+    value: "xandors@gmail.com"
+  - key: "core.editor"
+    value: "vim"
+  - key: "alias.dog"
+    value: "log --decorate --oneline --graph"
+  - key: "alias.adog"
+    value: "log --all --decorate --oneline --graph"
+
+git_repos:
+  # Environment
+  - name: .local/share/tfenv
+    repo: https://github.com/tfutils/tfenv.git
+  # Infradev
+  - name: projects/xandors/ansible-local
+    repo: git@github.com:xandors/ansible-local.git

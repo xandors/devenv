@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+account=$(aws sts get-caller-identity --query 'Account' --output text)
+docker login -u AWS -p $(aws ecr get-login-password) https://$account.dkr.ecr.$AWS_REGION.amazonaws.com

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+current_branch=$(git branch --show-current)
+
+git checkout master
+git fetch -p
+git pull origin
+
+git checkout $current_branch
+git rebase master
+# git diff master

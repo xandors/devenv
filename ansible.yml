@@ -1,0 +1,26 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: yes
+  # become: yes
+  become_method: sudo
+  vars_files:
+    - vault/aws.yml
+    - vault/repos.yml
+    - vault/ssl.yml
+  vars:
+    user_name: "{{ lookup('env', 'USER') }}"
+    local_home: "{{ lookup('env', 'HOME') }}"
+    bin_path: "{{ local_home }}/.local/bin"
+    data_dir: "{{ local_home }}/.local/share"
+    os_family: "{{ ansible_os_family | lower }}"
+    distribution_major_version: "{{ ansible_distribution_major_version }}"
+  environment:
+  roles:
+    - role: base
+    - role: debian
+      when: ansible_facts['os_family'] == 'Debian' and 'WSL_DISTRO_NAME' not in ansible_env
+    - role: wsl
+      when: ansible_facts['os_family'] == 'Debian' and 'WSL_DISTRO_NAME' in ansible_env
+    - role: macos
+      when: ansible_facts['os_family'] == 'Darwin'
