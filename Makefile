@@ -1,4 +1,5 @@
 install:
+	sudo apt-add-repository ppa:ansible/ansible
 	sudo apt install -y ansible
 	ansible-galaxy collection install community.general
 

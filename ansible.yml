@@ -19,8 +19,8 @@
   roles:
     - role: base
     - role: debian
-      when: ansible_facts['os_family'] == 'Debian' and 'WSL_DISTRO_NAME' not in ansible_env
-    - role: wsl
-      when: ansible_facts['os_family'] == 'Debian' and 'WSL_DISTRO_NAME' in ansible_env
+      when: ansible_facts['os_family'] == 'Debian' and ('WSL_DISTRO_NAME' not in ansible_env and 'C9_PROJECT' not in ansible_env)
+    - role: remote
+      when: ansible_facts['os_family'] == 'Debian' and ('WSL_DISTRO_NAME' in ansible_env or 'C9_PROJECT' in ansible_env)
     - role: macos
       when: ansible_facts['os_family'] == 'Darwin'
