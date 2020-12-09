@@ -33,6 +33,11 @@ curl -s https://get.sdkman.io | bash
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl
 ```
 
+## helm
+```
+helm completion bash | sudo tee /etc/bash_completion.d/helm
+```
+
 ## aws-iam-authenticator
 ```
 curl -o ~/.local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.8/2020-09-18/bin/linux/amd64/aws-iam-authenticator
