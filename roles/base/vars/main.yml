@@ -39,5 +39,5 @@ git_repos:
   - name: .local/share/tfenv
     repo: https://github.com/tfutils/tfenv.git
   # Infradev
-  - name: /xandors/devenv
+  - name: environment/xandors/devenv
     repo: git@github.com:xandors/devenv.git
