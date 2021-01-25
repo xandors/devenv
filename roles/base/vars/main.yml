@@ -5,6 +5,7 @@ directories:
   - ~/environment
   - ~/sync
   - ~/.terraform.d/plugins
+  - ~/.kube
 
 files:
   - ~/.bashrc
