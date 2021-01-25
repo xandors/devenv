@@ -2,7 +2,7 @@
 
 - name: Include vars
   include_vars:
-    file: "{{ distribution_major_version }}.yml"
+    file: "{{ architecture }}-{{ distribution_major_version }}.yml"
 
 - name: Update all packages to the latest version
   apt:
@@ -71,11 +71,11 @@
   with_items: "{{ repositories.url }}"
   become: true
 
-- name: Install packages
-  apt:
-    name: "{{ packages }}"
-    state: present
-  become: true
+# - name: Install packages
+#   apt:
+#     name: "{{ packages }}"
+#     state: present
+#   become: true
 
 - name: Install remote packages
   apt:
@@ -130,29 +130,29 @@
     state: present
   with_items: "{{ flatpaks }}"
 
-- name: nvm
-  shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+# - name: nvm
+#   shell: >
+#     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+#   args:
+#     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
-- name: Install VSCode Extensions
-  command: "code --install-extension {{ item }} --force"
-  with_items: "{{ vscode.extensions }}"
+# - name: Install VSCode Extensions
+#   command: "code --install-extension {{ item }} --force"
+#   with_items: "{{ vscode.extensions }}"
 
-- name: Write VSCode Settings
-  template:
-    src: settings.json.j2
-    dest: "~/.config/Code/User/settings.json"
-    force: yes
-    mode: 0644
+# - name: Write VSCode Settings
+#   template:
+#     src: settings.json.j2
+#     dest: "~/.config/Code/User/settings.json"
+#     force: yes
+#     mode: 0644
 
-- name: Write Terminator Settings
-  template:
-    src: config.j2
-    dest: "~/.config/terminator/config"
-    force: yes
-    mode: 0644
+# - name: Write Terminator Settings
+#   template:
+#     src: config.j2
+#     dest: "~/.config/terminator/config"
+#     force: yes
+#     mode: 0644
 
 - name: Remove useless packages from the cache
   apt:

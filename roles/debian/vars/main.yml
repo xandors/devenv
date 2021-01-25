@@ -15,7 +15,7 @@ packages:
   - build-essential
   - byobu
   - ca-certificates
-  - code
+  # - code
   - containerd.io
   - curl
   - direnv
@@ -28,7 +28,7 @@ packages:
   - git
   - gnome-software-plugin-flatpak
   - gnupg-agent
-  - google-chrome-stable
+  # - google-chrome-stable
   - gparted
   - helm
   - htop
@@ -45,7 +45,7 @@ packages:
   - libssl-dev
   - llvm
   - make
-  - megasync
+  # - megasync
   - nmap
   - openssh-server
   - p7zip-full
@@ -54,37 +54,37 @@ packages:
   - ruby
   - software-properties-common
   - telnet
-  - terminator
+  # - terminator
   - tk-dev
   - traceroute
   - vim
-  - virtualbox-6.1
+  # - virtualbox-6.1
   - wget
   - xz-utils
   - zip
   - zlib1g-dev
 
 remote_packages: [
-  "https://prerelease.keybase.io/keybase_amd64.deb"
+  # "https://prerelease.keybase.io/keybase_amd64.deb"
 ]
 
-remote_executables:
-  - name: vagrant
-    url: "https://releases.hashicorp.com/vagrant/2.2.13/vagrant_2.2.13_linux_amd64.zip"
-  - name: packer
-    url: "https://releases.hashicorp.com/packer/1.6.5/packer_1.6.5_linux_amd64.zip"
-  - name: terraform
-    url: "https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip"
-  - name: terragrunt
-    url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.4/terragrunt_linux_amd64"
+remote_executables: []
+  # - name: vagrant
+  #   url: "https://releases.hashicorp.com/vagrant/2.2.13/vagrant_2.2.13_linux_amd64.zip"
+  # - name: packer
+  #   url: "https://releases.hashicorp.com/packer/1.6.5/packer_1.6.5_linux_amd64.zip"
+  # - name: terraform
+  #   url: "https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip"
+  # - name: terragrunt
+  #   url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.4/terragrunt_linux_amd64"
 
 snaps:
   normal: []
   classic: []
 
-flatpaks:
-  - com.slack.Slack
-  - com.jetbrains.PyCharm-Community
+flatpaks: []
+  # - com.slack.Slack
+  # - com.jetbrains.PyCharm-Community
 
 vscode:
   extensions:
