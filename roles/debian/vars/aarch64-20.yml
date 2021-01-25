@@ -1,7 +1,7 @@
 repositories:
   ppa: []
   url:
-    - "deb [arch=arm64] https://download.docker.com/linux/ubuntu focal stable"
+    - "deb https://download.docker.com/linux/ubuntu groovy stable"
     - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
     - "deb https://baltocdn.com/helm/stable/debian/ all main"
   key:
