@@ -71,11 +71,11 @@
   with_items: "{{ repositories.url }}"
   become: true
 
-# - name: Install packages
-#   apt:
-#     name: "{{ packages }}"
-#     state: present
-#   become: true
+- name: Install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  become: true
 
 - name: Install remote packages
   apt:
