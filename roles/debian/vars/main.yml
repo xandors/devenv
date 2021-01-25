@@ -49,7 +49,7 @@ packages:
   - nmap
   - openssh-server
   - p7zip-full
-  - python-openssl
+  # - python-openssl
   - python3-pip
   - ruby
   - software-properties-common
