@@ -4,6 +4,7 @@ bashrc_includes:
 homebrew:
   - ansible
   - awscli
+  - aws-iam-authenticator
   - bash
   - bash-completion@2
   - coreutils
@@ -13,35 +14,34 @@ homebrew:
   - git
   - graphviz
   - helm
-  - hyperkit
+#   - hyperkit
   - jq
-  - kubectl
-  - mas
+#   - kubectl
+#   - mas
   - nmap
   - pipenv
   - pyenv
   - telnet
   - terraforming
-  - tfenv
   - tree
   - vim
   - watch
   - wget
 
 homebrew_cask:
-  - docker
+#   - docker
+  - firefox-developer-edition
   - google-chrome
   - intellij-idea
-  - iglance
   - iterm2
-  - keybase
-  - multipass
-  - numi
-  - shift
+#   - keybase
+#   - multipass
+#   - numi
+#   - shift
   - slack
-  - vagrant
-  - visual-studio-code
-  - xquartz
+#   - vagrant
+  - homebrew/cask-versions/visual-studio-code-insiders
+#   - xquartz
 
 vscode:
   extensions:

@@ -3,11 +3,11 @@
 - name: Inserting bash 4 to /etc/shells
   lineinfile:
     path: /etc/shells
-    line: "/usr/local/bin/bash"
+    line: "/opt/homebrew/bin/bash"
   become: true
 
 # - name: Change default shell to bash 4
-#   shell: chsh -s /usr/local/bin/bash
+#   shell: chsh -s /opt/homebrew/bin/bash
 
 - name: Inserting itens in .bashrc
   lineinfile:
@@ -15,11 +15,11 @@
     line: "{{ item }}"
   with_items: "{{ bashrc_includes }}"
 
-- name: nvm
-  shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+# - name: nvm
+#   shell: >
+#     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+#   args:
+#     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
 - homebrew:
     update_homebrew: yes
@@ -34,7 +34,7 @@
     state: present
 
 - name: Install VSCode Extensions
-  command: "code --install-extension {{ item }} --force"
+  command: "code-insiders --install-extension {{ item }} --force"
   with_items: "{{ vscode.extensions }}"
 
 #- name: Write VSCode Settings
