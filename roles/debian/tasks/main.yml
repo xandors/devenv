@@ -156,7 +156,7 @@
 
 - name: Create mountable dir
   file:
-    path: /share
+    path: "/share"
     state: directory
     mode: 777
     owner: root
@@ -165,7 +165,7 @@
 
 - name: Ensure NFS utilities are installed.
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: latest
     update_cache: yes
   with_items:
@@ -175,7 +175,7 @@
 
 - name: Add NFS export
   lineinfile:
-    path: /etc/exports
+    path: "/etc/exports"
     line: "/share *(rw,sync,no_subtree_check)"
   become: true
 
