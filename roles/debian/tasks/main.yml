@@ -163,26 +163,19 @@
     group: root
   become: true
 
-- name: Ensure NFS utilities are installed.
-  apt:
-    name: "{{ item }}"
-    state: latest
-    update_cache: yes
-  with_items:
-    - nfs-common
-    - nfs-kernel-server
-  become: true
-
 - name: Add NFS export
   lineinfile:
     path: "/etc/exports"
-    line: "/share *(rw,sync,no_subtree_check)"
+    line: "/share *(rw,sync,no_root_squash,insecure)"
   become: true
 
 - name: restart nfs server
   service:
-    name: nfs-kernel-server
+    name: "{{ item }}"
     state: restarted
+    with_items:
+      - nfs-kernel-server
+      - rpc-statd
   become: true
 
 - name: Remove useless packages from the cache
