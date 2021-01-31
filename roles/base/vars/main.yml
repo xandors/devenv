@@ -2,7 +2,6 @@ directories:
   - ~/.aws
   - ~/.ssh
   - ~/.local/bin
-  - ~/environment
   - ~/sync
   - ~/.terraform.d/plugins
   - ~/.kube
