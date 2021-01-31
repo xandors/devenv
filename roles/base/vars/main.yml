@@ -6,6 +6,7 @@ directories:
   - ~/sync
   - ~/.terraform.d/plugins
   - ~/.kube
+  - ~/projects
 
 files:
   - ~/.bashrc
@@ -16,6 +17,7 @@ scripts:
   bin:
     - docker-login
     - rebase.sh
+    - mount-nfs
   root:
     - bash_profile
     - vimrc
