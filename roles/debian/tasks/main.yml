@@ -154,6 +154,25 @@
 #     force: yes
 #     mode: 0644
 
+- name: Create NFS directory
+  file:
+    path: /mnt/nfs_share
+    state: directory
+    mode: '0777'
+    owner: nobody
+    group: nogroup
+  become: true
+
+- name: Add NFS export
+  lineinfile:
+    path: /etc/exports
+    line: "/mnt/nfs_share *(rw,sync,no_subtree_check)"
+  become: true
+
+- name: NFS apply change configrue
+  shell: "exportfs -a ;systemctl restart nfs-kernel-server"
+  become: true
+
 - name: Remove useless packages from the cache
   apt:
     autoclean: true

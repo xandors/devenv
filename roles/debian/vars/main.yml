@@ -46,6 +46,7 @@ packages:
   - llvm
   - make
   # - megasync
+  - nfs-kernel-server
   - nmap
   - openssh-server
   - p7zip-full
