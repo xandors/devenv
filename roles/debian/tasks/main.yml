@@ -179,14 +179,6 @@
   file: path=/share state=directory mode=777 owner=root group=root
   become: true
 
-- name: make sure the mount drive has a filesystem
-  filesystem: fstype=ext4 dev={{ mountable_share_drive | default('/dev/xvdb') }}
-  become: true
-
-- name: set mountpoints
-  mount: name=/share src={{ mountable_share_drive | default('/dev/xvdb') }} fstype=auto opts=defaults,nobootwait dump=0 passno=2 state=mounted
-  become: true
-
 - name: Ensure NFS utilities are installed.
   apt: name={{ item }} state=installed update_cache=yes
   with_items:
