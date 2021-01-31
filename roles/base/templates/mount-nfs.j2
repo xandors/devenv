@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/projects
-mount -t nfs ubuntu-linux:/share ~/projects
+mount -o nolock -t nfs ubuntu-linux:/share ~/projects
 sudo chmod 755 ~/projects
 sudo chown alex:staff ~/projects
