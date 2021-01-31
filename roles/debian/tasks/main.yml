@@ -155,11 +155,19 @@
 #     mode: 0644
 
 - name: Create mountable dir
-  file: path=/share state=directory mode=777 owner=root group=root
+  file:
+    path: /share
+    state: directory
+    mode: 777
+    owner: root
+    group: root
   become: true
 
 - name: Ensure NFS utilities are installed.
-  apt: name={{ item }} state=installed update_cache=yes
+  apt:
+    name: {{ item }}
+    state: latest
+    update_cache: yes
   with_items:
     - nfs-common
     - nfs-kernel-server
@@ -172,7 +180,9 @@
   become: true
 
 - name: restart nfs server
-  service: name=nfs-kernel-server state=restarted
+  service:
+    name: nfs-kernel-server
+    state: restarted
   become: true
 
 - name: Remove useless packages from the cache
