@@ -159,14 +159,14 @@
     path: "/share"
     state: directory
     mode: 777
-    owner: root
-    group: root
+    owner: nobody
+    group: nogroup
   become: true
 
 - name: Add NFS export
   lineinfile:
     path: "/etc/exports"
-    line: "/share *(rw,sync,no_root_squash,insecure)"
+    line: "/share *(rw,sync,no_root_squash,no_subtree_check,insecure)"
   become: true
 
 - name: restart nfs server
