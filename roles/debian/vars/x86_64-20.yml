@@ -1,11 +1,11 @@
 repositories:
   ppa: []
   url:
-    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib"
+    - "deb http://dl.google.com/linux/chrome/deb/ stable main"
+    - "deb https://download.virtualbox.org/virtualbox/debian focal contrib"
     - "deb https://mega.nz/linux/MEGAsync/xUbuntu_20.04/ ./"
-    - "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    - "deb https://download.docker.com/linux/ubuntu focal stable"
+    - "deb https://packages.microsoft.com/repos/vscode stable main"
     - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
     - "deb https://baltocdn.com/helm/stable/debian/ all main"
   key:

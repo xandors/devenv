@@ -70,15 +70,15 @@ remote_packages: [
   # "https://prerelease.keybase.io/keybase_amd64.deb"
 ]
 
-remote_executables: []
-  # - name: vagrant
-  #   url: "https://releases.hashicorp.com/vagrant/2.2.13/vagrant_2.2.13_linux_amd64.zip"
-  # - name: packer
-  #   url: "https://releases.hashicorp.com/packer/1.6.5/packer_1.6.5_linux_amd64.zip"
-  # - name: terraform
-  #   url: "https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip"
-  # - name: terragrunt
-  #   url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.4/terragrunt_linux_amd64"
+remote_executables:
+   - name: vagrant
+     url: "https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_linux_amd64.zip"
+   - name: packer
+     url: "https://releases.hashicorp.com/packer/1.6.6/packer_1.6.6_linux_amd64.zip"
+   - name: terraform
+     url: "https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip"
+   - name: terragrunt
+     url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.4/terragrunt_linux_amd64"
 
 snaps:
   normal: []

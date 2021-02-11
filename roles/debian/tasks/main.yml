@@ -175,7 +175,6 @@
     state: restarted
   with_items:
     - nfs-kernel-server
-    - rpc-statd
   become: true
 
 - name: Remove useless packages from the cache
