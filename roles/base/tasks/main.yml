@@ -101,6 +101,7 @@
   git:
     repo: "{{ item.repo }}"
     dest: "~/{{ item.name }}"
+    version: "{{ item.version }}"
     update: no
   with_items: "{{ repos }}"
   ignore_errors: yes
