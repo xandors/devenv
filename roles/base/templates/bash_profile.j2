@@ -54,4 +54,9 @@ export PATH="$HOME/.local/share/tfenv/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
+# history size
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTTIMEFORMAT="%F %T "
+
 uname -n -r -m
