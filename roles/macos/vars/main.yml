@@ -18,6 +18,7 @@ homebrew:
   - jq
 #   - kubectl
 #   - mas
+  - k2tf  # brew tap sl1pm4t/k2tf https://github.com/sl1pm4t/k2tf.git
   - k9s
   - nmap
   - pipenv
