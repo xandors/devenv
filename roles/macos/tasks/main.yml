@@ -40,6 +40,6 @@
 #- name: Write VSCode Settings
 #  template:
 #    src: settings.json.j2
-#    dest: "~/.config/Code/User/settings.json"
+#    dest: "~/workspace.code-workspace"
 #    force: yes
 #    mode: 0644
