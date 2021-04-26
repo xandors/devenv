@@ -52,6 +52,7 @@ homebrew_cask:
 #   - vagrant
   - visual-studio-code
 #   - xquartz
+  - zoom
 
 vscode:
   extensions:
