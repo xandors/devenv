@@ -3,14 +3,12 @@ directories:
   - ~/.ssh
   - ~/.ssh/veea
   - ~/.local/bin
-  - ~/sync
   - ~/.terraform.d/plugins
   - ~/.kube
   - ~/projects
 
 files:
-  - ~/.bashrc
-  - ~/.bash_profile
+  - ~/.bash_local
   - ~/.vimrc
 
 scripts:
@@ -19,7 +17,7 @@ scripts:
     - rebase.sh
     - mount-nfs
   root:
-    - bash_profile
+    - bash_local
     - vimrc
   specific:
     - dir: .tfenv
