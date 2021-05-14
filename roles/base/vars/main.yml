@@ -1,6 +1,7 @@
 directories:
   - ~/.aws
   - ~/.ssh
+  - ~/.ssh/veea
   - ~/.local/bin
   - ~/sync
   - ~/.terraform.d/plugins
