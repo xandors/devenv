@@ -7,6 +7,7 @@ homebrew:
   - aws-iam-authenticator
   - bash
   - bash-completion@2
+  - certbot
   - coreutils
   - curl
   - direnv
@@ -17,7 +18,7 @@ homebrew:
   - helmfile
 #   - hyperkit
   - jq
-#   - kubectl
+   - kubectl
 #   - mas
   - k2tf  # brew tap sl1pm4t/k2tf https://github.com/sl1pm4t/k2tf.git
   - k9s
