@@ -22,7 +22,7 @@ eval $(${LOCAL_BIN}/bin/brew shellenv)
 # ssh
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_ed25519
-ssh-add ~/.ssh/id_rsa.veea
+ssh-add ~/.ssh/veea/id_rsa.veea
 
 # aws cli
 complete -C '${LOCAL_BIN}/bin/aws_completer' aws
