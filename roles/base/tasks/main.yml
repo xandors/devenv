@@ -93,7 +93,7 @@
   git:
     repo: "{{ item.repo }}"
     dest: "~/{{ item.name }}"
-    update: no
+    update: yes
   with_items: "{{ git_repos }}"
   ignore_errors: yes
 
@@ -102,7 +102,7 @@
     repo: "{{ item.repo }}"
     dest: "~/{{ item.name }}"
     version: "{{ item.version }}"
-    update: no
+    update: yes
   with_items: "{{ repos }}"
   ignore_errors: yes
 

@@ -10,14 +10,14 @@ alias grep='grep --color'
 
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
-# export LOCAL_BIN=/usr/local
-export LOCAL_BIN=/opt/homebrew
-
-# brew
-eval $(${LOCAL_BIN}/bin/brew shellenv)
-
-# bash_completion
-[[ -r "${LOCAL_BIN}/etc/profile.d/bash_completion.sh" ]] && . "${LOCAL_BIN}/etc/profile.d/bash_completion.sh"
+## export LOCAL_BIN=/usr/local
+#export LOCAL_BIN=/opt/homebrew
+#
+## brew
+#eval $(${LOCAL_BIN}/bin/brew shellenv)
+#
+## bash_completion
+#[[ -r "${LOCAL_BIN}/etc/profile.d/bash_completion.sh" ]] && . "${LOCAL_BIN}/etc/profile.d/bash_completion.sh"
 
 # ssh
 eval $(ssh-agent -s)
@@ -25,7 +25,7 @@ ssh-add ~/.ssh/id_ed25519
 ssh-add ~/.ssh/veea/id_rsa.veea
 
 # aws cli
-complete -C '${LOCAL_BIN}/bin/aws_completer' aws
+complete -C 'aws_completer' aws
 
 # direnv
 eval "$(direnv hook bash)"
@@ -44,8 +44,7 @@ export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init --path)"
 
 # tfenv
 export PATH="$HOME/.local/share/tfenv/bin:$PATH"
