@@ -40,6 +40,7 @@ homebrew:
 homebrew_cask:
 #   - docker
   - authy
+  - dbeaver-community
   - firefox-developer-edition
   - google-chrome
   - intellij-idea
