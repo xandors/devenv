@@ -5,7 +5,7 @@ directories:
   - ~/.local/bin
   - ~/.terraform.d/plugins
   - ~/.kube
-  - ~/environment
+  - ~/projects
 
 files:
   - ~/.bash_local

@@ -1,5 +1,5 @@
 bashrc_includes:
-  - "[ -f ~/.bash_profile ] && . ~/.bash_profile"
+  - "[ -f ~/.bash_local ] && . ~/.bash_local"
 
 homebrew:
   - ansible
@@ -16,21 +16,21 @@ homebrew:
   - graphviz
   - helm
   - helmfile
-#   - hyperkit
+  # - hyperkit
   - jq
   - kubectl
-#   - mas
-  - k2tf  # brew tap sl1pm4t/k2tf https://github.com/sl1pm4t/k2tf.git
+  # - mas
+  # - k2tf  # brew tap sl1pm4t/k2tf https://github.com/sl1pm4t/k2tf.git
   - k9s
   - nmap
   - pipenv
   - pyenv
   - telnet
   - iam-policy-json-to-terraform
-  - terracognita
-  - terraform_landscape
-  - terraformer
-  - terraforming
+  # - terracognita
+  # - terraform_landscape
+  # - terraformer
+  # - terraforming
   - terragrunt
   - tree
   - vim
@@ -40,7 +40,7 @@ homebrew:
 homebrew_cask:
 #   - docker
   - authy
-  - dbeaver-community
+  # - dbeaver-community
   - firefox-developer-edition
   - google-chrome
   - intellij-idea
