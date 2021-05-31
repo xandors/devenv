@@ -38,7 +38,8 @@ homebrew:
   - wget
 
 homebrew_cask:
-#   - docker
+  - docker
+  - airbuddy
   - authy
   # - dbeaver-community
   - firefox-developer-edition
