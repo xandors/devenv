@@ -42,7 +42,7 @@ homebrew_cask:
   - airbuddy
   - authy
   # - dbeaver-community
-  - firefox-developer-edition
+  - homebrew/cask-versions/firefox-developer-edition
   - google-chrome
   - intellij-idea
   - iterm2
