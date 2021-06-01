@@ -48,6 +48,7 @@ homebrew_cask:
   - iterm2
   - keybase
   - lens
+  - microsoft-teams
 #   - multipass
 #   - numi
   - shift
