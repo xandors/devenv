@@ -8,7 +8,8 @@ directories:
   - ~/projects
 
 files:
-  - ~/.bash_local
+  - ~/.bashrc
+  - ~/.bash_profile
   - ~/.vimrc
 
 scripts:
@@ -17,7 +18,7 @@ scripts:
     - rebase.sh
     - mount-nfs
   root:
-    - bash_local
+    - bash_profile
     - vimrc
   specific:
     - dir: .tfenv
@@ -40,5 +41,5 @@ git_repos:
   - name: .local/share/tfenv
     repo: https://github.com/tfutils/tfenv.git
   # Infradev
-  - name: environment/xandors/devenv
+  - name: projects/xandors/devenv
     repo: git@github.com:xandors/devenv.git

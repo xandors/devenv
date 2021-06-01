@@ -21,21 +21,29 @@
 #   args:
 #     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
-- homebrew:
+- name: Update homebrew
+  homebrew:
     update_homebrew: yes
     upgrade_all: yes
 
-- homebrew:
-    name: "{{ homebrew }}"
+- name: Install brew packages
+  homebrew:
+    name: "{{ item }}"
     state: present
+  loop: "{{ homebrew }}"
+  ignore_errors: yes
 
-- homebrew_cask:
-    name: "{{ homebrew_cask }}"
+- name: Install brew cask packages
+  homebrew_cask:
+    name: "{{ item }}"
     state: present
+  loop: "{{ homebrew_cask }}"
+  ignore_errors: yes
 
 - name: Install VSCode Extensions
-  command: "code-insiders --install-extension {{ item }} --force"
-  with_items: "{{ vscode.extensions }}"
+  command: "code --install-extension {{ item }} --force"
+  loop: "{{ vscode.extensions }}"
+  ignore_errors: yes
 
 #- name: Write VSCode Settings
 #  template:

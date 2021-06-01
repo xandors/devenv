@@ -1,5 +1,11 @@
 # local-machine
 
+## bash
+```
+echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
+sudo chsh -s /opt/homebrew/bin/bash
+```
+
 ## aws cli
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
