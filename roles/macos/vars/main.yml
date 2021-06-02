@@ -77,6 +77,7 @@ vscode:
     - quicktype.quicktype
     - Tyriar.sort-lines
     - vscode-icons-team.vscode-icons
+    - tim-koehler.helm-intellisense
   settings: {
     "files.autoSave": "afterDelay",
     "editor.rulers": [
@@ -89,5 +90,6 @@ vscode:
     "projectManager.any.baseFolders": [
         "/Users/alex/projects/veea"
     ],
-    "projectManager.any.maxDepthRecursion": 2
+    "projectManager.any.maxDepthRecursion": 2,
+    "files.insertFinalNewline": true
   }
