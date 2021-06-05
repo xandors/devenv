@@ -30,7 +30,7 @@ homebrew:
   # - terracognita
   # - terraform_landscape
   # - terraformer
-  # - terraforming
+  - terraforming
   - terragrunt
   - tree
   - vim
