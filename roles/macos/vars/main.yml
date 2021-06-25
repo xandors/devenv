@@ -16,6 +16,7 @@ homebrew:
   - graphviz
   - helm
   - helmfile
+  - httpie
   # - hyperkit
   - jq
   - kubectl
