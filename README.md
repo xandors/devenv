@@ -53,3 +53,6 @@ curl -o ~/.local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazo
 curl -o ~/.local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/arm64/aws-iam-authenticator
 chmod +x ~/.local/bin/aws-iam-authenticator
 ```
+
+## podman
+https://www.redhat.com/sysadmin/podman-windows-wsl2

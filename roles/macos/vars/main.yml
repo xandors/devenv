@@ -25,6 +25,7 @@ homebrew:
   - k9s
   - nmap
   - pipenv
+  - podman
   - pyenv
   - telnet
   - iam-policy-json-to-terraform

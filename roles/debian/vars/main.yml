@@ -1,8 +1,8 @@
 user_groups:
-  - docker
+  # - docker
   - sudo
-  - vboxsf
-  - vboxusers
+  # - vboxsf
+  # - vboxusers
 
 bashrc_includes:
   - "[ -f ~/.bash_profile ] && . ~/.bash_profile"
@@ -16,13 +16,13 @@ packages:
   - byobu
   - ca-certificates
   # - code
-  - containerd.io
+  # - containerd.io
   - curl
   - direnv
-  - docker-ce
-  - docker-ce-cli
-  - exfat-fuse
-  - exfat-utils
+  # - docker-ce
+  # - docker-ce-cli
+  # - exfat-fuse
+  # - exfat-utils
   - flatpak
   - gdebi
   - git
@@ -52,6 +52,7 @@ packages:
   - openssh-server
   - p7zip-full
   # - python-openssl
+  - podman
   - python3-pip
   - ruby
   - software-properties-common
@@ -71,14 +72,18 @@ remote_packages: [
 ]
 
 remote_executables:
+   - name: aws-iam-authenticator
+     url: "https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator"
    - name: vagrant
-     url: "https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_linux_amd64.zip"
+     url: "https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_linux_amd64.zip"
    - name: packer
-     url: "https://releases.hashicorp.com/packer/1.6.6/packer_1.6.6_linux_amd64.zip"
+     url: "https://releases.hashicorp.com/packer/1.7.3/packer_1.7.3_linux_amd64.zip"
    - name: terraform
-     url: "https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip"
+     url: "https://releases.hashicorp.com/terraform/1.0.2/terraform_1.0.2_linux_amd64.zip"
    - name: terragrunt
-     url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.4/terragrunt_linux_amd64"
+     url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.31.0/terragrunt_linux_amd64"
+   - name: helmfile
+     url: "https://github.com/roboll/helmfile/releases/download/v0.139.9/helmfile_linux_amd64"
 
 snaps:
   normal: []
