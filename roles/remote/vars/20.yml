@@ -3,6 +3,9 @@ repositories:
   url:
     - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
     - "deb https://baltocdn.com/helm/stable/debian/ all main"
+    - "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"
   key:
     - url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
     - url: "https://baltocdn.com/helm/signing.asc"
+    - url: "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/Release.key"
+

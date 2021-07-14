@@ -26,6 +26,7 @@ packages:
   - nmap
   - openssh-server
   - p7zip-full
+  - podman
   - python3-pip
   - ruby
   - software-properties-common
